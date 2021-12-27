@@ -10,8 +10,8 @@ const myEnv = require('dotenv').config();
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-// process.env.MONGODB_UR
-mongoose.connect(url,{useNewUrlParser: true});
+// process.env.MONGODB_URL
+mongoose.connect(process.env.MONGODB_URL,{useNewUrlParser: true});
 const con= mongoose.connection;
 app.use(express.json());
 try{
